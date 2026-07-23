@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SudoShea | Systems & Security Projects</title>
+    <style>
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --accent: #58a6ff; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        h1, h2 { color: #fff; }
+        .header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+        .card h3 { margin-top: 0; color: var(--accent); }
+        .tag { display: inline-block; background: #21262d; border: 1px solid var(--border); border-radius: 12px; padding: 0.2rem 0.6rem; font-size: 0.8rem; margin-right: 0.4rem; margin-top: 0.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SudoShea</h1>
+        <p>Systems Administration, Infrastructure-as-Code & Security Automation</p>
+    </div>
+
+    <h2>🛠 Featured Projects</h2>
+    <div class="grid">
+        <div class="card">
+            <h3><a href="https://github.com/SudoShea/linux-system-hardening">linux-system-hardening</a></h3>
+            <p>Automated POSIX Bash script for baseline security hardening and firewall configuration across RHEL and Debian hosts.</p>
+            <div><span class="tag">Bash</span><span class="tag">Security</span><span class="tag">Firewalld</span></div>
+        </div>
+
+        <div class="card">
+            <h3><a href="https://github.com/SudoShea/ansible-system-hardening">ansible-system-hardening</a></h3>
+            <p>Idempotent Ansible playbook automating system hardening, SSH configuration, and default firewall policies at scale.</p>
+            <div><span class="tag">Ansible</span><span class="tag">IaC</span><span class="tag">RHEL</span></div>
+        </div>
+
+        <div class="card">
+            <h3><a href="https://github.com/SudoShea/linux-security-auditor">linux-security-auditor</a></h3>
+            <p>Zero-dependency Python CLI tool performing non-destructive compliance auditing and JSON report generation.</p>
+            <div><span class="tag">Python</span><span class="tag">Audit</span><span class="tag">CLI</span></div>
+        </div>
+    </div>
+</body>
+</html>
