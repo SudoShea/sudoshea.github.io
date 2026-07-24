@@ -1,267 +1,234 @@
+<!--
+==============================================================================
+File        : index.html
+Description : SudoShea Security & Infrastructure Portfolio Site
+Author      : SudoShea
+Version     : 1.1.0
+License     : MIT
+==============================================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SudoShea | Systems & Security</title>
+    <title>SudoShea | Security & Automation Engineering</title>
     <style>
         :root {
-            --bg: #0d1117;
-            --card-bg: #161b22;
-            --border: #30363d;
-            --text: #c9d1d9;
-            --text-heading: #ffffff;
-            --accent: #58a6ff;
-            --tag-bg: #21262d;
-            --upcoming-border: #8b949e;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-green: #22c55e;
+            --border: #334155;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
             line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+        }
+        .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 2rem 1rem;
         }
-
         header {
+            margin-bottom: 3rem;
             border-bottom: 1px solid var(--border);
             padding-bottom: 1.5rem;
-            margin-bottom: 2.5rem;
         }
-
         h1 {
-            color: var(--text-heading);
-            margin-bottom: 0.5rem;
-            font-size: 2.2rem;
+            font-size: 2.25rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--accent);
         }
-
         .subtitle {
+            color: var(--text-secondary);
             font-size: 1.1rem;
-            color: #8b949e;
+            margin: 0;
         }
-
         .section-title {
-            color: var(--text-heading);
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border);
             padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
         }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
         .card {
-            background: var(--card-bg);
+            background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .card-header {
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, border-color 0.2s;
+            align-items: center;
+            margin-bottom: 0.75rem;
         }
-
-        .card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent);
-        }
-
-        .card.upcoming {
-            border-style: dashed;
-            opacity: 0.9;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-        }
-
-        .card h3 a {
+        .card-title {
+            font-size: 1.25rem;
+            margin: 0;
             color: var(--accent);
+        }
+        .card-title a {
+            color: inherit;
             text-decoration: none;
         }
-
-        .card h3 a:hover {
+        .card-title a:hover {
             text-decoration: underline;
         }
-
-        .card p {
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-        }
-
-        .status-badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 0.15rem 0.5rem;
+        .badge {
+            background-color: #0369a1;
+            color: #e0f2fe;
+            padding: 0.2rem 0.6rem;
             border-radius: 4px;
-            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
             font-weight: 600;
         }
-
-        .status-backlog { background: #1f6feb22; color: #58a6ff; border: 1px solid #1f6feb; }
-        .status-planned { background: #23863622; color: #3fb950; border: 1px solid #238636; }
-        .status-completed { background: #23863622; color: #3fb950; border: 1px solid #238636; }
-
-        .tags {
+        .badge-green {
+            background-color: #15803d;
+            color: #dcfce7;
+        }
+        .tag-container {
             display: flex;
+            gap: 0.5rem;
             flex-wrap: wrap;
-            gap: 0.4rem;
+            margin-top: 1rem;
         }
-
         .tag {
-            background: var(--tag-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 0.25rem 0.65rem;
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
             font-size: 0.8rem;
-            color: #8b949e;
+            border: 1px solid var(--border);
         }
-
+        ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+            color: var(--text-secondary);
+        }
         footer {
             margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
             text-align: center;
+            color: var(--text-secondary);
             font-size: 0.9rem;
-            color: #8b949e;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>SudoShea</h1>
+            <p class="subtitle">Security Automation, Linux Hardening & Infrastructure-as-Code</p>
+        </header>
 
-    <header>
-        <h1>SudoShea</h1>
-        <div class="subtitle">Linux Systems Administration • Security Automation • Infrastructure-as-Code</div>
-    </header>
+        <main>
+            <h2 class="section-title">Production Repositories</h2>
 
-    <main>
-        <!-- Featured Projects -->
-        <h2 class="section-title">🛠️ Featured Projects</h2>
-        <div class="grid">
-
+            <!-- Homelab Infrastructure -->
             <div class="card">
-                <div>
-                    <h3><a href="https://github.com/SudoShea/linux-system-hardening">linux-system-hardening</a></h3>
-                    <p>Automated POSIX Bash script for baseline security hardening, SSH configuration, and firewall rules across RHEL and Debian hosts.</p>
+                <div class="card-header">
+                    <h3 class="card-title"><a href="https://github.com/SudoShea/homelab-infrastructure">homelab-infrastructure</a></h3>
+                    <span class="badge badge-green">v1.0.1</span>
                 </div>
-                <div class="tags">
-                    <span class="tag">Bash</span>
-                    <span class="tag">RHEL</span>
-                    <span class="tag">Firewalld</span>
-                    <span class="tag">UFW</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3><a href="https://github.com/SudoShea/ansible-system-hardening">ansible-system-hardening</a></h3>
-                    <p>Idempotent Ansible playbook automating system hardening, SSH configuration, and firewall policies across server infrastructure.</p>
-                </div>
-                <div class="tags">
+                <p>Ansible-driven Infrastructure-as-Code stack deploying rootless containers (Pi-hole, Unbound recursive DNS, Caddy reverse proxy) with automated volume management and Jinja2 templating.</p>
+                <div class="tag-container">
                     <span class="tag">Ansible</span>
-                    <span class="tag">IaC</span>
-                    <span class="tag">DevOps</span>
-                    <span class="tag">YAML</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3><a href="https://github.com/SudoShea/linux-security-auditor">linux-security-auditor</a></h3>
-                    <p>Zero-dependency Python CLI tool for non-destructive security compliance scanning and JSON report generation.</p>
-                </div>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Security</span>
-                    <span class="tag">Audit</span>
-                    <span class="tag">CLI</span>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Completed Milestones -->
-        <h2 class="section-title">
-            <span>✅ Completed Milestones</span>
-        </h2>
-        <div class="grid">
-
-            <div class="card">
-                <div>
-                    <span class="status-badge status-completed">Completed</span>
-                    <h3>SSH Real-Time Sentinel (`ssh_sentinel.py`)</h3>
-                    <p>Extended the Python security auditor with real-time log parsing to monitor authentication attempts, detect brute-force patterns, and automatically enforce firewall IP bans.</p>
-                </div>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Log Analysis</span>
-                    <span class="tag">SecOps</span>
-                    <span class="tag">Firewalld/UFW</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="status-badge status-completed">Completed</span>
-                    <h3>Automated CI/CD Quality Control Pipelines</h3>
-                    <p>Configured GitHub Actions workflows across all core repositories for automated linting and static code analysis using Ansible-Lint, ShellCheck, and Flake8.</p>
-                </div>
-                <div class="tags">
-                    <span class="tag">GitHub Actions</span>
-                    <span class="tag">CI/CD</span>
-                    <span class="tag">ShellCheck</span>
-                    <span class="tag">Flake8</span>
-                    <span class="tag">Ansible-Lint</span>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Upcoming Projects / Roadmap -->
-        <h2 class="section-title">
-            <span>🚀 Upcoming Roadmap</span>
-        </h2>
-        <div class="grid">
-
-            <div class="card upcoming">
-                <div>
-                    <span class="status-badge status-planned">Planned</span>
-                    <h3>Rootless Podman Homelab Stack</h3>
-                    <p>Ansible-driven deployment of a rootless Podman environment running Pi-hole DNS, Unbound, and Caddy reverse proxy.</p>
-                </div>
-                <div class="tags">
                     <span class="tag">Podman</span>
-                    <span class="tag">Containers</span>
-                    <span class="tag">Networking</span>
+                    <span class="tag">Rootless</span>
+                    <span class="tag">DNS</span>
+                    <span class="tag">Caddy</span>
+                    <span class="tag">ansible-lint</span>
                 </div>
             </div>
 
-        </div>
-    </main>
+            <!-- Ansible System Hardening -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"><a href="https://github.com/SudoShea/ansible-system-hardening">ansible-system-hardening</a></h3>
+                    <span class="badge badge-green">v1.0.1</span>
+                </div>
+                <p>Automated Linux security baseline enforcement via Ansible roles, implementing SSH hardening, PAM configurations, firewall rules, and kernel sysctl security parameters.</p>
+                <div class="tag-container">
+                    <span class="tag">Ansible</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Hardening</span>
+                    <span class="tag">CI/CD</span>
+                </div>
+            </div>
 
-    <footer>
-        <p>Track project progress on my <a href="https://github.com/users/SudoShea/projects/1">GitHub Project Board</a></p>
-    </footer>
+            <!-- Linux System Hardening -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"><a href="https://github.com/SudoShea/linux-system-hardening">linux-system-hardening</a></h3>
+                    <span class="badge badge-green">v1.0.1</span>
+                </div>
+                <p>POSIX-compliant Shell script automation framework for lightweight, zero-dependency host security hardening and system parameter lockdown.</p>
+                <div class="tag-container">
+                    <span class="tag">Shell</span>
+                    <span class="tag">POSIX</span>
+                    <span class="tag">ShellCheck</span>
+                    <span class="tag">Security</span>
+                </div>
+            </div>
 
+            <!-- Linux Security Auditor -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"><a href="https://github.com/SudoShea/linux-security-auditor">linux-security-auditor</a></h3>
+                    <span class="badge badge-green">v1.1.1</span>
+                </div>
+                <p>Python-based security audit tool featuring real-time SSH threat monitoring (`ssh_sentinel.py`) and automated compliance inspection routines.</p>
+                <div class="tag-container">
+                    <span class="tag">Python</span>
+                    <span class="tag">Flake8</span>
+                    <span class="tag">Monitoring</span>
+                    <span class="tag">SSH Sentinel</span>
+                </div>
+            </div>
+
+            <h2 class="section-title">Operational Runbooks & Infrastructure Documentation</h2>
+
+            <!-- Topology & Disaster Recovery -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Homelab Topology & Disaster Recovery Runbook</h3>
+                    <span class="badge">Runbook</span>
+                </div>
+                <p>Comprehensive operational playbook detailing edge-to-core network topology, DNS resolution routing, rootless container isolation boundaries, and step-by-step cold-boot restore procedures.</p>
+                <ul>
+                    <li><strong>Network Architecture:</strong> Isolated VLAN segments with local DNS intercept via Pi-hole & Unbound.</li>
+                    <li><strong>Failover Protocol:</strong> Secondary DNS failover sequence and automated Caddy route recovery.</li>
+                    <li><strong>RTO / RPO Targets:</strong> &lt; 15 minute Recovery Time Objective for critical core services.</li>
+                </ul>
+            </div>
+
+            <!-- Encrypted Backup & Retention -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Encrypted Backup & Retention Policy Runbook</h3>
+                    <span class="badge">Runbook</span>
+                </div>
+                <p>Standardized backup procedures specifying AES-256 encrypted snapshot creation, offsite sync channels, and automated lifecycle retention schedules for persistent volume data.</p>
+                <ul>
+                    <li><strong>Encryption standard:</strong> Client-side AES-256 GPG encryption prior to transport.</li>
+                    <li><strong>Retention Schedule:</strong> Daily local snapshots (7-day roll), weekly offsite sync (30-day retention).</li>
+                    <li><strong>Integrity Verification:</strong> Automated monthly restore testing and hash verification routines.</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 SudoShea | Hosted via GitHub Pages | Validated with HTMLHint CI</p>
+        </footer>
+    </div>
 </body>
 </html>
