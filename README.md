@@ -1,11 +1,20 @@
-# Personal Portfolio Website 🌐
+# SudoShea Portfolio & Project Hub 🌐
 
-This repository contains the source code for my personal GitHub Pages portfolio site, deployed at **[sudoshea.github.io](https://sudoshea.github.io)**.
+![HTML Linting](https://github.com/SudoShea/sudoshea.github.io/actions/workflows/lint.yml/badge.svg)
+
+The central portfolio and project tracking site for **SudoShea**, highlighting Linux systems administration, security automation, and Infrastructure-as-Code projects.
+
+Live Site: [https://sudoshea.github.io](https://sudoshea.github.io)
 
 ---
 
-## 🛠️ Stack & Features
+## 🛠️ Stack & Standards
 
-* **HTML5 & Modern CSS:** Zero dependencies, lightweight, and responsive design.
-* **GitHub Pages Integration:** Automatically deployed from the `main` branch.
-* **Portfolio Showcase:** Highlights featured projects across Linux Systems Administration, Infrastructure-as-Code (Ansible), and Security Automation (Python/Bash).
+* **Structure:** Clean, semantic, zero-dependency HTML5 & CSS3.
+* **CI/CD:** Automated HTML static analysis via GitHub Actions (`HTMLHint`).
+* **Hosting:** GitHub Pages.
+
+---
+
+## 📄 License
+Distributed under the MIT License. See `LICENSE` for details.
