@@ -2,6 +2,10 @@
 
 All notable changes to the `sudoshea.github.io` portfolio site will be documented in this file.
 
+## [1.2.0] - 2026-07-24
+### Changed
+- Promoted **Homelab Topology & Disaster Recovery Runbook** from *In Progress* to *Completed Smaller Projects* following verification.
+
 ## [1.1.0] - 2026-07-24
 ### Added
 - Restructured layout into a 4-stage project pipeline: **Production Repositories**, **Completed Smaller Projects**, **In Progress**, and **Backlog**.
