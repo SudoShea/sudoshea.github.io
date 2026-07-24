@@ -115,6 +115,7 @@
 
         .status-backlog { background: #1f6feb22; color: #58a6ff; border: 1px solid #1f6feb; }
         .status-planned { background: #23863622; color: #3fb950; border: 1px solid #238636; }
+        .status-completed { background: #23863622; color: #3fb950; border: 1px solid #238636; }
 
         .tags {
             display: flex;
@@ -154,7 +155,7 @@
     </header>
 
     <main>
-        <!-- Completed Projects -->
+        <!-- Featured Projects -->
         <h2 class="section-title">🛠️ Featured Projects</h2>
         <div class="grid">
 
@@ -199,25 +200,48 @@
 
         </div>
 
-        <!-- Upcoming Projects / Roadmap -->
+        <!-- Completed Milestones -->
         <h2 class="section-title">
-            <span>🚀 Upcoming Roadmap</span>
+            <span>✅ Completed Milestones</span>
         </h2>
         <div class="grid">
 
-            <div class="card upcoming">
+            <div class="card">
                 <div>
-                    <span class="status-badge status-backlog">Complete</span>
-                    <h3>SSH Log Parser & Anomaly Detector</h3>
-                    <p>Extending the Python security auditor to parse <code>/var/log/auth.log</code> for brute-force patterns and suspicious SSH activity.</p>
+                    <span class="status-badge status-completed">Completed</span>
+                    <h3>SSH Real-Time Sentinel (`ssh_sentinel.py`)</h3>
+                    <p>Extended the Python security auditor with real-time log parsing to monitor authentication attempts, detect brute-force patterns, and automatically enforce firewall IP bans.</p>
                 </div>
                 <div class="tags">
                     <span class="tag">Python</span>
                     <span class="tag">Log Analysis</span>
                     <span class="tag">SecOps</span>
-                    <span class="tag">JSON</span>
+                    <span class="tag">Firewalld/UFW</span>
                 </div>
             </div>
+
+            <div class="card">
+                <div>
+                    <span class="status-badge status-completed">Completed</span>
+                    <h3>Automated CI/CD Quality Control Pipelines</h3>
+                    <p>Configured GitHub Actions workflows across all core repositories for automated linting and static code analysis using Ansible-Lint, ShellCheck, and Flake8.</p>
+                </div>
+                <div class="tags">
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">ShellCheck</span>
+                    <span class="tag">Flake8</span>
+                    <span class="tag">Ansible-Lint</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Upcoming Projects / Roadmap -->
+        <h2 class="section-title">
+            <span>🚀 Upcoming Roadmap</span>
+        </h2>
+        <div class="grid">
 
             <div class="card upcoming">
                 <div>
@@ -229,19 +253,6 @@
                     <span class="tag">Podman</span>
                     <span class="tag">Containers</span>
                     <span class="tag">Networking</span>
-                </div>
-            </div>
-
-            <div class="card upcoming">
-                <div>
-                    <span class="status-badge status-planned">Planned</span>
-                    <h3>CI/CD ShellCheck & Ansible Linting</h3>
-                    <p>Automated GitHub Actions pipeline to run static code analysis and syntax verification on every repository commit.</p>
-                </div>
-                <div class="tags">
-                    <span class="tag">GitHub Actions</span>
-                    <span class="tag">CI/CD</span>
-                    <span class="tag">DevOps</span>
                 </div>
             </div>
 
