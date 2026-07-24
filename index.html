@@ -21,6 +21,8 @@ License     : MIT
             --text-secondary: #94a3b8;
             --accent: #38bdf8;
             --accent-green: #22c55e;
+            --accent-amber: #f59e0b;
+            --accent-purple: #a855f7;
             --border: #334155;
         }
         body {
@@ -94,6 +96,14 @@ License     : MIT
             background-color: #15803d;
             color: #dcfce7;
         }
+        .badge-amber {
+            background-color: #92400e;
+            color: #fef3c7;
+        }
+        .badge-purple {
+            background-color: #6b21a8;
+            color: #f3e8ff;
+        }
         .tag-container {
             display: flex;
             gap: 0.5rem;
@@ -131,9 +141,9 @@ License     : MIT
         </header>
 
         <main>
+            <!-- 1. PRODUCTION REPOSITORIES -->
             <h2 class="section-title">Production Repositories</h2>
 
-            <!-- Homelab Infrastructure -->
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title"><a href="https://github.com/SudoShea/homelab-infrastructure">homelab-infrastructure</a></h3>
@@ -150,7 +160,6 @@ License     : MIT
                 </div>
             </div>
 
-            <!-- Ansible System Hardening -->
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title"><a href="https://github.com/SudoShea/ansible-system-hardening">ansible-system-hardening</a></h3>
@@ -165,7 +174,6 @@ License     : MIT
                 </div>
             </div>
 
-            <!-- Linux System Hardening -->
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title"><a href="https://github.com/SudoShea/linux-system-hardening">linux-system-hardening</a></h3>
@@ -180,7 +188,6 @@ License     : MIT
                 </div>
             </div>
 
-            <!-- Linux Security Auditor -->
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title"><a href="https://github.com/SudoShea/linux-security-auditor">linux-security-auditor</a></h3>
@@ -195,34 +202,77 @@ License     : MIT
                 </div>
             </div>
 
-            <h2 class="section-title">Operational Runbooks & Infrastructure Documentation</h2>
+            <!-- 2. COMPLETED SMALLER PROJECTS -->
+            <h2 class="section-title">Completed Smaller Projects</h2>
 
-            <!-- Topology & Disaster Recovery -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">SSH Sentinel Daemon</h3>
+                    <span class="badge">Completed</span>
+                </div>
+                <p>Lightweight Python log monitoring daemon integrated into <code>linux-security-auditor</code> that parses auth logs in real time to detect brute-force patterns and trigger alert hooks.</p>
+                <div class="tag-container">
+                    <span class="tag">Python</span>
+                    <span class="tag">Log Parsing</span>
+                    <span class="tag">Security Monitoring</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">CI/CD Automated Quality Gates</h3>
+                    <span class="badge">Completed</span>
+                </div>
+                <p>End-to-end GitHub Actions workflow templates enforcing automated static code analysis across Python (Flake8), POSIX Shell (ShellCheck), Ansible (ansible-lint), and HTML (HTMLHint).</p>
+                <div class="tag-container">
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">Static Analysis</span>
+                    <span class="tag">DevSecOps</span>
+                </div>
+            </div>
+
+            <!-- 3. IN PROGRESS -->
+            <h2 class="section-title">In Progress</h2>
+
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Homelab Topology & Disaster Recovery Runbook</h3>
-                    <span class="badge">Runbook</span>
+                    <span class="badge badge-amber">Drafting</span>
                 </div>
-                <p>Comprehensive operational playbook detailing edge-to-core network topology, DNS resolution routing, rootless container isolation boundaries, and step-by-step cold-boot restore procedures.</p>
+                <p>Operational playbook defining edge-to-core network layout, local DNS routing via Pi-hole & Unbound, container isolation boundaries, and step-by-step cold-boot restore steps.</p>
                 <ul>
-                    <li><strong>Network Architecture:</strong> Isolated VLAN segments with local DNS intercept via Pi-hole & Unbound.</li>
-                    <li><strong>Failover Protocol:</strong> Secondary DNS failover sequence and automated Caddy route recovery.</li>
-                    <li><strong>RTO / RPO Targets:</strong> &lt; 15 minute Recovery Time Objective for critical core services.</li>
+                    <li><strong>Focus:</strong> Isolated VLAN layout, secondary DNS failover, and &lt;15 min RTO recovery targets.</li>
                 </ul>
             </div>
 
-            <!-- Encrypted Backup & Retention -->
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Encrypted Backup & Retention Policy Runbook</h3>
-                    <span class="badge">Runbook</span>
+                    <span class="badge badge-amber">Drafting</span>
                 </div>
-                <p>Standardized backup procedures specifying AES-256 encrypted snapshot creation, offsite sync channels, and automated lifecycle retention schedules for persistent volume data.</p>
+                <p>Standardized backup specifications detailing client-side AES-256 GPG snapshot creation, offsite sync schedules, and automated lifecycle retention policies.</p>
                 <ul>
-                    <li><strong>Encryption standard:</strong> Client-side AES-256 GPG encryption prior to transport.</li>
-                    <li><strong>Retention Schedule:</strong> Daily local snapshots (7-day roll), weekly offsite sync (30-day retention).</li>
-                    <li><strong>Integrity Verification:</strong> Automated monthly restore testing and hash verification routines.</li>
+                    <li><strong>Focus:</strong> Daily local snapshots (7-day roll), weekly offsite sync (30-day retention), and monthly hash integrity checks.</li>
                 </ul>
+            </div>
+
+            <!-- 4. BACKLOG -->
+            <h2 class="section-title">Backlog</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Automated Certificate Management via ACME / DNS-01</h3>
+                    <span class="badge badge-purple">Planned</span>
+                </div>
+                <p>Integration of DNS-01 challenge workflows into the Caddy container stack for seamless wildcard internal TLS certificates without exposing port 80/443 to the WAN.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Centralized Syslog & Metric Collector</h3>
+                    <span class="badge badge-purple">Planned</span>
+                </div>
+                <p>Deployment specification for a lightweight Vector / Grafana agent container stack to collect and visualize host security metrics and container logs.</p>
             </div>
         </main>
 

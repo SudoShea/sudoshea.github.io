@@ -4,11 +4,12 @@ All notable changes to the `sudoshea.github.io` portfolio site will be documente
 
 ## [1.1.0] - 2026-07-24
 ### Added
-- Showcase card for `homelab-infrastructure` project (v1.0.1).
-- Operational runbook sections covering Homelab Network Topology, Disaster Recovery (RTO/RPO objectives), and Encrypted Backup & Retention policies.
+- Restructured layout into a 4-stage project pipeline: **Production Repositories**, **Completed Smaller Projects**, **In Progress**, and **Backlog**.
+- Featured `homelab-infrastructure` stack (v1.0.1) under Production Repositories.
+- Added active runbook drafts under In Progress and future infrastructure plans under Backlog.
 
 ### Fixed
-- Corrected repository link and naming reference to `linux-system-hardening`.
+- Corrected repository reference link to `linux-system-hardening`.
 
 ## [1.0.1] - 2026-07-24
 ### Added
