@@ -2,6 +2,14 @@
 
 All notable changes to the `sudoshea.github.io` portfolio site will be documented in this file.
 
+## [1.3.0] - 2026-07-24
+### Changed
+- Promoted **3-2-1 Encrypted Backup & Retention Policy** to Completed Smaller Projects following v1.2.0 homelab release.
+- Moved **Automated Internal Certificate Management (ACME)** and **Centralized Logging Pipeline** to In Progress.
+
+### Added
+- Added **Headscale Mesh VPN** and **Prometheus & Grafana Telemetry Stack** to Backlog.
+
 ## [1.2.0] - 2026-07-24
 ### Changed
 - Promoted **Homelab Topology & Disaster Recovery Runbook** from *In Progress* to *Completed Smaller Projects* following verification.
