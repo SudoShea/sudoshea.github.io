@@ -2,6 +2,21 @@
 
 All notable changes to the `sudoshea.github.io` portfolio site will be documented in this file.
 
+## [1.4.0] - 2026-07-25
+
+### Added
+- **Profile Bio & Mission Blurb:** Added personal engineering overview and roadmap focus below the header section.
+- **Native Pi-hole v6 HTTPS Project Card:** Added completed project card covering local Root CA generation, Civetweb formatting, and automated TLS renewal scripting.
+- **Secondary DNS Sync Project Card:** Added "Automated Secondary DNS Sync" (Nebula Sync) card to the In Progress section.
+- **New Backlog Items:** Added "Podman Quadlet Migration" and "CIS Benchmark Compliance Scanner" cards to the project backlog.
+
+### Changed
+- **Repository Version Updates:** Updated `homelab-infrastructure` production card to **v1.5.0** reflecting native TLS, multi-OS support (Debian/RHEL), and rootless Podman stack features.
+- **Template Version:** Bumped `index.html` version header to `1.4.0`.
+
+### Removed
+- Removed legacy Caddy reverse proxy and ACME/DNS-01 TLS references from the active project stack and in-progress roadmap.
+
 ## [1.3.0] - 2026-07-24
 ### Changed
 - Promoted **3-2-1 Encrypted Backup & Retention Policy** to Completed Smaller Projects following v1.2.0 homelab release.

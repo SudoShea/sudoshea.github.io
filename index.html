@@ -3,7 +3,7 @@
 File        : index.html
 Description : SudoShea Security & Infrastructure Portfolio Site
 Author      : SudoShea
-Version     : 1.3.0
+Version     : 1.4.0
 License     : MIT
 ==============================================================================
 -->
@@ -44,7 +44,7 @@ License     : MIT
             display: flex;
             align-items: center;
             gap: 1.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             border-bottom: 1px solid var(--border);
             padding-bottom: 2rem;
         }
@@ -68,6 +68,27 @@ License     : MIT
             color: var(--text-secondary);
             font-size: 1.1rem;
             margin: 0;
+        }
+
+        /* Bio / Mission Blurb */
+        .bio-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .bio-card p {
+            margin: 0 0 0.75rem 0;
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+        }
+        .bio-card p:last-child {
+            margin-bottom: 0;
+        }
+        .bio-card strong {
+            color: var(--text-primary);
         }
 
         /* Section Titles */
@@ -191,6 +212,12 @@ License     : MIT
             </div>
         </header>
 
+        <!-- ABOUT / MISSION STATEMENT BLURB -->
+        <section class="bio-card">
+            <p><strong>About Me:</strong> Systems &amp; Security Automation Engineer focused on building resilient, reproducible, and production-grade Linux infrastructure. I specialize in zero-trust rootless containerization, automated OS hardening, client-side encryption pipelines, and Infrastructure-as-Code (IaC) workflows.</p>
+            <p><strong>Current &amp; Planned Focus:</strong> My ongoing work centers on eliminating single points of failure across multi-node homelab architectures — engineering automated multi-OS maintenance (Debian &amp; RHEL), high-availability DNS synchronization, native TLS certificate lifecycle management, and strict 3-2-1 disaster recovery pipelines.</p>
+        </section>
+
         <main>
             <!-- 1. PRODUCTION REPOSITORIES -->
             <h2 class="section-title">🚀 Production Repositories</h2>
@@ -199,16 +226,17 @@ License     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title"><a href="https://github.com/SudoShea/homelab-infrastructure">🏠 homelab-infrastructure</a></h3>
-                            <span class="badge badge-green">v1.2.0</span>
+                            <span class="badge badge-green">v1.5.0</span>
                         </div>
-                        <p>Ansible-driven IaC stack deploying rootless Podman containers (Pi-hole, Unbound, Caddy) with automated Jinja2 templating, 3-2-1 AES-256 encrypted backups, and host maintenance.</p>
+                        <p>Ansible-driven IaC stack deploying rootless Podman containers (Pi-hole v6 native HTTPS, Unbound recursive DNS) with multi-OS support (Debian/RHEL), 3-2-1 AES-256 encrypted backups, and automated host security patching.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Ansible</span>
                         <span class="tag">Podman</span>
                         <span class="tag">Rootless</span>
-                        <span class="tag">Caddy</span>
-                        <span class="tag">GPG</span>
+                        <span class="tag">Native TLS</span>
+                        <span class="tag">Multi-OS</span>
+                        <span class="tag">AES-256</span>
                     </div>
                 </div>
 
@@ -218,7 +246,7 @@ License     : MIT
                             <h3 class="card-title"><a href="https://github.com/SudoShea/ansible-system-hardening">🛡️ ansible-system-hardening</a></h3>
                             <span class="badge badge-green">v1.0.1</span>
                         </div>
-                        <p>Automated Linux security baseline enforcement implementing SSH hardening, PAM rules, firewall, and kernel sysctl tuning.</p>
+                        <p>Automated Linux security baseline enforcement implementing SSH hardening, PAM rules, firewall rules, and kernel sysctl tuning.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Ansible</span>
@@ -265,13 +293,33 @@ License     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
+                            <h3 class="card-title">🔑 Native Pi-hole v6 HTTPS Setup</h3>
+                            <span class="badge badge-blue">Completed</span>
+                        </div>
+                        <p>Private Root Certificate Authority (CA) workflow, Civetweb unencrypted key formatting, and annual automated TLS certificate renewal scripting without external reverse proxies.</p>
+                        <ul>
+                            <li><strong>Protocol:</strong> Local Root CA + SAN extensions</li>
+                            <li><strong>Automation:</strong> Annual renewal &amp; container reload cron</li>
+                        </ul>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">TLS/PKI</span>
+                        <span class="tag">OpenSSL</span>
+                        <span class="tag">Civetweb</span>
+                        <span class="tag">Pi-hole v6</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
                             <h3 class="card-title">📖 Topology &amp; DR Runbook</h3>
                             <span class="badge badge-blue">Completed</span>
                         </div>
-                        <p>Operational playbook defining VLAN network layout, DNS routing via Pi-hole &amp; Unbound, and verified cold-boot disaster restore steps.</p>
+                        <p>Operational playbook defining local network layout, recursive DNS chaining via Pi-hole &amp; Unbound, and verified cold-boot disaster restore steps.</p>
                         <ul>
                             <li><strong>RTO Target:</strong> &lt; 15 min core recovery</li>
-                            <li><strong>Scope:</strong> DNS failover &amp; route recovery</li>
+                            <li><strong>Scope:</strong> Multi-OS DNS failover &amp; route recovery</li>
                         </ul>
                     </div>
                     <div class="tag-container">
@@ -337,16 +385,16 @@ License     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">🔑 ACME / DNS-01 Certs</h3>
+                            <h3 class="card-title">🔄 Automated Secondary DNS Sync</h3>
                             <span class="badge badge-amber">In Progress</span>
                         </div>
-                        <p>Integrating DNS-01 challenge workflows into Caddy for seamless wildcard internal TLS certificates without exposing HTTP/HTTPS ports to WAN.</p>
+                        <p>Integrating Nebula Sync for real-time automated gravity, adlist, and local DNS record replication between primary and secondary Pi-hole v6 instances.</p>
                     </div>
                     <div class="tag-container">
-                        <span class="tag">Caddy</span>
-                        <span class="tag">ACME</span>
-                        <span class="tag">TLS/PKI</span>
-                        <span class="tag">DNS-01</span>
+                        <span class="tag">Nebula Sync</span>
+                        <span class="tag">High Availability</span>
+                        <span class="tag">Pi-hole v6</span>
+                        <span class="tag">Podman</span>
                     </div>
                 </div>
 
@@ -370,6 +418,38 @@ License     : MIT
             <!-- 4. BACKLOG -->
             <h2 class="section-title">📌 Backlog</h2>
             <div class="grid-row">
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">📦 Podman Quadlet Migration</h3>
+                            <span class="badge badge-purple">homelab-infrastructure</span>
+                        </div>
+                        <p>Migrating container definitions to systemd-native Podman Quadlets (`.container` files) managed via Ansible roles for deeper systemd service integration.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Quadlet</span>
+                        <span class="tag">systemd</span>
+                        <span class="tag">Podman</span>
+                        <span class="tag">Ansible</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🛡️ CIS Benchmark Compliance Scanner</h3>
+                            <span class="badge badge-purple">ansible-system-hardening</span>
+                        </div>
+                        <p>Automated auditing role validating host OS configurations against CIS (Center for Internet Security) benchmarks for Debian and RHEL node targets.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">CIS</span>
+                        <span class="tag">Compliance</span>
+                        <span class="tag">Hardening</span>
+                        <span class="tag">Ansible</span>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div>
                         <div class="card-header">
