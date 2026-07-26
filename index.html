@@ -3,16 +3,16 @@
 File        : index.html
 Description : SudoShea Security & Infrastructure Portfolio Site
 Author      : SudoShea
-Version     : 1.4.0
+Version     : 1.5.0
 License     : MIT
 ==============================================================================
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SudoShea | Security & Automation Engineering</title>
+    <title>SudoShea | Security &amp; Automation Engineering</title>
     <style>
         :root {
             --bg-color: #090d16;
@@ -214,8 +214,8 @@ License     : MIT
 
         <!-- ABOUT / MISSION STATEMENT BLURB -->
         <section class="bio-card">
-            <p><strong>About Me:</strong> Systems &amp; Security Automation Engineer focused on building resilient, reproducible, and production-grade Linux infrastructure. I specialize in zero-trust rootless containerization, automated OS hardening, client-side encryption pipelines, and Infrastructure-as-Code (IaC) workflows.</p>
-            <p><strong>Current &amp; Planned Focus:</strong> My ongoing work centers on eliminating single points of failure across multi-node homelab architectures — engineering automated multi-OS maintenance (Debian &amp; RHEL), high-availability DNS synchronization, native TLS certificate lifecycle management, and strict 3-2-1 disaster recovery pipelines.</p>
+            <p><strong>About Me:</strong> Systems &amp; Security Automation Engineer focused on building resilient, reproducible, and production-grade Linux infrastructure. I specialise in zero-trust rootless containerisation, automated OS hardening, client-side encryption pipelines, and Infrastructure-as-Code (IaC) workflows.</p>
+            <p><strong>Current &amp; Planned Focus:</strong> My ongoing work centres on eliminating single points of failure across multi-node homelab architectures — engineering automated multi-OS maintenance (Debian &amp; RHEL), high-availability DNS synchronisation, native TLS certificate lifecycle management, and strict 3-2-1 disaster recovery pipelines.</p>
         </section>
 
         <main>
@@ -226,16 +226,18 @@ License     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title"><a href="https://github.com/SudoShea/homelab-infrastructure">🏠 homelab-infrastructure</a></h3>
-                            <span class="badge badge-green">v1.5.0</span>
+                            <span class="badge badge-green">v1.6.1</span>
                         </div>
-                        <p>Ansible-driven IaC stack deploying rootless Podman containers (Pi-hole v6 native HTTPS, Unbound recursive DNS) with multi-OS support (Debian/RHEL), 3-2-1 AES-256 encrypted backups, and automated host security patching.</p>
+                        <p>Ansible-driven IaC stack deploying rootless Podman containers (Pi-hole v6 native HTTPS, Unbound recursive DNS, Vector, Loki, Grafana) with multi-OS support (Debian/RHEL), 3-2-1 AES-256 encrypted backups, and automated host security patching.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Ansible</span>
                         <span class="tag">Podman</span>
                         <span class="tag">Rootless</span>
                         <span class="tag">Native TLS</span>
-                        <span class="tag">Multi-OS</span>
+                        <span class="tag">Loki</span>
+                        <span class="tag">Grafana</span>
+                        <span class="tag">Vector</span>
                         <span class="tag">AES-256</span>
                     </div>
                 </div>
@@ -290,6 +292,46 @@ License     : MIT
             <!-- 2. COMPLETED SMALLER PROJECTS -->
             <h2 class="section-title">✅ Completed Smaller Projects</h2>
             <div class="grid-row">
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🔄 Automated Secondary DNS Sync</h3>
+                            <span class="badge badge-blue">Completed</span>
+                        </div>
+                        <p>Integrated Nebula Sync for real-time automated gravity, adlist, and local DNS record replication between primary and secondary Pi-hole v6 instances.</p>
+                        <ul>
+                            <li><strong>Engine:</strong> Nebula Sync container</li>
+                            <li><strong>Scope:</strong> High-availability Pi-hole v6 cluster sync</li>
+                        </ul>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Nebula Sync</span>
+                        <span class="tag">High Availability</span>
+                        <span class="tag">Pi-hole v6</span>
+                        <span class="tag">Podman</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">📊 Centralised Syslog &amp; Log Pipeline</h3>
+                            <span class="badge badge-blue">Completed</span>
+                        </div>
+                        <p>Deployment of a lightweight Vector log collector, Loki indexing engine, and Grafana UI container stack over HTTPS to visualize systemd and container logs.</p>
+                        <ul>
+                            <li><strong>Pipeline:</strong> Vector &rarr; Loki &rarr; Grafana HTTPS</li>
+                            <li><strong>Scope:</strong> Real-time journald &amp; container log aggregation</li>
+                        </ul>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Vector</span>
+                        <span class="tag">Grafana Loki</span>
+                        <span class="tag">Syslog</span>
+                        <span class="tag">Podman</span>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div>
                         <div class="card-header">
@@ -385,44 +427,8 @@ License     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">🔄 Automated Secondary DNS Sync</h3>
-                            <span class="badge badge-amber">In Progress</span>
-                        </div>
-                        <p>Integrating Nebula Sync for real-time automated gravity, adlist, and local DNS record replication between primary and secondary Pi-hole v6 instances.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">Nebula Sync</span>
-                        <span class="tag">High Availability</span>
-                        <span class="tag">Pi-hole v6</span>
-                        <span class="tag">Podman</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <h3 class="card-title">📊 Centralized Syslog Stack</h3>
-                            <span class="badge badge-amber">In Progress</span>
-                        </div>
-                        <p>Deployment specification for a lightweight Vector and Grafana agent container stack to visualize security metrics and container logs.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">Vector</span>
-                        <span class="tag">Grafana Loki</span>
-                        <span class="tag">Syslog</span>
-                        <span class="tag">Podman</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. BACKLOG -->
-            <h2 class="section-title">📌 Backlog</h2>
-            <div class="grid-row">
-                <div class="card">
-                    <div>
-                        <div class="card-header">
                             <h3 class="card-title">📦 Podman Quadlet Migration</h3>
-                            <span class="badge badge-purple">homelab-infrastructure</span>
+                            <span class="badge badge-amber">In Progress</span>
                         </div>
                         <p>Migrating container definitions to systemd-native Podman Quadlets (`.container` files) managed via Ansible roles for deeper systemd service integration.</p>
                     </div>
@@ -438,7 +444,7 @@ License     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title">🛡️ CIS Benchmark Compliance Scanner</h3>
-                            <span class="badge badge-purple">ansible-system-hardening</span>
+                            <span class="badge badge-amber">In Progress</span>
                         </div>
                         <p>Automated auditing role validating host OS configurations against CIS (Center for Internet Security) benchmarks for Debian and RHEL node targets.</p>
                     </div>
@@ -449,7 +455,11 @@ License     : MIT
                         <span class="tag">Ansible</span>
                     </div>
                 </div>
+            </div>
 
+            <!-- 4. BACKLOG -->
+            <h2 class="section-title">📌 Backlog</h2>
+            <div class="grid-row">
                 <div class="card">
                     <div>
                         <div class="card-header">
@@ -471,12 +481,44 @@ License     : MIT
                             <h3 class="card-title">📈 Prometheus &amp; Grafana Telemetry</h3>
                             <span class="badge badge-purple">homelab-infrastructure</span>
                         </div>
-                        <p>Telemetry stack deploying Node Exporter and cAdvisor metrics collectors piped into Prometheus and visualized via custom Grafana dashboards.</p>
+                        <p>Telemetry stack deploying Node Exporter and cAdvisor metrics collectors piped into Prometheus and visualised via custom Grafana dashboards.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Prometheus</span>
                         <span class="tag">Grafana</span>
                         <span class="tag">Metrics</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🔐 Automated Secrets Management</h3>
+                            <span class="badge badge-purple">ansible-system-hardening</span>
+                        </div>
+                        <p>Integrating Mozilla SOPS and HashiCorp Vault workflows into Ansible automation for secure, age-encrypted credential handling in public repositories.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">SOPS</span>
+                        <span class="tag">Vault</span>
+                        <span class="tag">Encryption</span>
+                        <span class="tag">Ansible</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🧪 Molecule CI Integration Testing</h3>
+                            <span class="badge badge-purple">ansible-system-hardening</span>
+                        </div>
+                        <p>Implementing automated Ansible Molecule testing pipelines utilising Podman drivers to validate role idempotency and task execution in CI.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Molecule</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Podman</span>
+                        <span class="tag">Testing</span>
                     </div>
                 </div>
             </div>
