@@ -5,6 +5,31 @@ All notable changes to the `sudoshea.github.io` portfolio site will be documente
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.1] - 2026-07-27
+
+### Fixed
+- **Version Badges**: Corrected production repository version badges for `homelab-infrastructure` (`v1.7.1`) and `ansible-system-hardening` (`v1.1.1`).
+
+---
+
+## [1.6.0] - 2026-07-27
+
+### Added
+- **New Production Repository**: Added `linux-backup-automation` (`v0.1.0`) to the Production Repositories section.
+- **Disaster Recovery Roadmap**: Introduced three active project cards for `linux-backup-automation`:
+  - Automated AES-256 Snapshot Engine
+  - Automated Restore Verification Pipeline
+  - Immutable 3-2-1 Offsite Cloud Replication
+
+### Changed
+- **Auditor Suite Overhaul**: Updated `linux-security-auditor` card to `v2.0.0` highlighting the new `audit.py` unified CLI wrapper and modular engine.
+- **Completed Milestones**: Promoted **Podman Quadlet Migration** and **CIS Benchmark Compliance** cards from In Progress to Completed Projects.
+- **Tag & Content Refinement**: Updated technical tags, summaries, and descriptions across all repository cards.
+
+### Removed
+- **Deprecated Repository**: Removed the `linux-system-hardening` card following repository deprecation in favor of `ansible-system-hardening`.
+- **Redundant Project Card**: Removed the standalone "SSH Sentinel Daemon" card from Completed Projects, as the log parser is now integrated into `linux-security-auditor`.
+
 ## [1.5.0] - 2026-07-26
 
 ### Added

@@ -3,7 +3,7 @@
 File        : index.html
 Description : SudoShea Security & Infrastructure Portfolio Site
 Author      : SudoShea
-Version     : 1.5.0
+Version     : 1.6.1
 License     : MIT
 ==============================================================================
 -->
@@ -226,13 +226,13 @@ License     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title"><a href="https://github.com/SudoShea/homelab-infrastructure">🏠 homelab-infrastructure</a></h3>
-                            <span class="badge badge-green">v1.6.1</span>
+                            <span class="badge badge-green">v1.7.1</span>
                         </div>
-                        <p>Ansible-driven IaC stack deploying rootless Podman containers (Pi-hole v6 native HTTPS, Unbound recursive DNS, Vector, Loki, Grafana) with multi-OS support (Debian/RHEL), 3-2-1 AES-256 encrypted backups, and automated host security patching.</p>
+                        <p>Ansible-driven IaC stack deploying systemd-native Podman Quadlets (Pi-hole v6 native HTTPS, Unbound recursive DNS, Vector, Loki, Grafana) with multi-OS support (Debian/RHEL), automated backups, and host security patching.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Ansible</span>
-                        <span class="tag">Podman</span>
+                        <span class="tag">Podman Quadlets</span>
                         <span class="tag">Rootless</span>
                         <span class="tag">Native TLS</span>
                         <span class="tag">Loki</span>
@@ -246,30 +246,17 @@ License     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title"><a href="https://github.com/SudoShea/ansible-system-hardening">🛡️ ansible-system-hardening</a></h3>
-                            <span class="badge badge-green">v1.0.1</span>
+                            <span class="badge badge-green">v1.1.1</span>
                         </div>
-                        <p>Automated Linux security baseline enforcement implementing SSH hardening, PAM rules, firewall rules, and kernel sysctl tuning.</p>
+                        <p>Automated Linux security baseline enforcement role applying CIS Benchmark Level 1/2 controls across SSH, sysctl kernel parameters, auditd, shadow permissions, and dynamic firewall rules.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Ansible</span>
+                        <span class="tag">CIS Benchmark</span>
                         <span class="tag">Linux</span>
                         <span class="tag">Hardening</span>
-                        <span class="tag">CI/CD</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <h3 class="card-title"><a href="https://github.com/SudoShea/linux-system-hardening">🔒 linux-system-hardening</a></h3>
-                            <span class="badge badge-green">v1.0.1</span>
-                        </div>
-                        <p>POSIX-compliant Shell script framework for lightweight, zero-dependency host security hardening and lockdown.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">Shell</span>
-                        <span class="tag">POSIX</span>
-                        <span class="tag">ShellCheck</span>
+                        <span class="tag">sysctl</span>
+                        <span class="tag">auditd</span>
                     </div>
                 </div>
 
@@ -277,14 +264,33 @@ License     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title"><a href="https://github.com/SudoShea/linux-security-auditor">🔍 linux-security-auditor</a></h3>
-                            <span class="badge badge-green">v1.1.1</span>
+                            <span class="badge badge-green">v2.0.0</span>
                         </div>
-                        <p>Python security audit tool featuring real-time SSH threat monitoring daemon and automated compliance inspection routines.</p>
+                        <p>Non-destructive Python security suite featuring a unified CLI (<code>audit.py</code>), live OpenSSH evaluation (<code>sshd -T</code>), Podman container risk inspection, systemd journald SSH threat parsing, and report drift detection.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Python 3</span>
+                        <span class="tag">CIS Audit</span>
+                        <span class="tag">Podman Inspection</span>
+                        <span class="tag">Journald</span>
+                        <span class="tag">Drift Detector</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title"><a href="https://github.com/SudoShea/linux-backup-automation">💾 linux-backup-automation</a></h3>
+                            <span class="badge badge-amber">v0.1.0</span>
+                        </div>
+                        <p>Automated backup, encryption, retention prune, and restore testing framework for zero-trust disaster recovery pipelines across Linux hosts.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Python</span>
-                        <span class="tag">Flake8</span>
-                        <span class="tag">Monitoring</span>
+                        <span class="tag">Bash</span>
+                        <span class="tag">AES-256</span>
+                        <span class="tag">Restic</span>
+                        <span class="tag">3-2-1 Backup</span>
                     </div>
                 </div>
             </div>
@@ -292,6 +298,46 @@ License     : MIT
             <!-- 2. COMPLETED SMALLER PROJECTS -->
             <h2 class="section-title">✅ Completed Smaller Projects</h2>
             <div class="grid-row">
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">📦 Podman Quadlet Migration</h3>
+                            <span class="badge badge-blue">Completed</span>
+                        </div>
+                        <p>Migrated container definitions to systemd-native Podman Quadlets (<code>.container</code> unit files) managed via Ansible for integrated service lifecycle management.</p>
+                        <ul>
+                            <li><strong>Engine:</strong> Podman Quadlet + systemd</li>
+                            <li><strong>Scope:</strong> Native user-scoped unit auto-reloads</li>
+                        </ul>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Quadlet</span>
+                        <span class="tag">systemd</span>
+                        <span class="tag">Podman</span>
+                        <span class="tag">Ansible</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🛡️ CIS Benchmark Compliance</h3>
+                            <span class="badge badge-blue">Completed</span>
+                        </div>
+                        <p>Implemented automated CIS Level 1/2 compliance controls across Debian and RHEL node targets inside <code>ansible-system-hardening</code>.</p>
+                        <ul>
+                            <li><strong>Scope:</strong> Kernel sysctl, SSH drop-ins, auditd, PAM</li>
+                            <li><strong>Validation:</strong> Verified via <code>linux-security-auditor</code></li>
+                        </ul>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">CIS</span>
+                        <span class="tag">Hardening</span>
+                        <span class="tag">sysctl</span>
+                        <span class="tag">Ansible</span>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div>
                         <div class="card-header">
@@ -394,21 +440,6 @@ License     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">👁️ SSH Sentinel Daemon</h3>
-                            <span class="badge badge-blue">Completed</span>
-                        </div>
-                        <p>Lightweight Python log monitoring daemon integrated into <code>linux-security-auditor</code> parsing auth logs in real time to trigger alert hooks.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">Python</span>
-                        <span class="tag">Log Parsing</span>
-                        <span class="tag">Security</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-header">
                             <h3 class="card-title">🤖 CI/CD Quality Gates</h3>
                             <span class="badge badge-blue">Completed</span>
                         </div>
@@ -427,32 +458,48 @@ License     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">📦 Podman Quadlet Migration</h3>
+                            <h3 class="card-title">🔐 Automated AES-256 Snapshot Engine</h3>
                             <span class="badge badge-amber">In Progress</span>
                         </div>
-                        <p>Migrating container definitions to systemd-native Podman Quadlets (`.container` files) managed via Ansible roles for deeper systemd service integration.</p>
+                        <p>Restic/Borg-based incremental backup automation featuring client-side encryption, chunk-level deduplication, and automated snapshot retention pruning.</p>
                     </div>
                     <div class="tag-container">
-                        <span class="tag">Quadlet</span>
-                        <span class="tag">systemd</span>
-                        <span class="tag">Podman</span>
-                        <span class="tag">Ansible</span>
+                        <span class="tag">Restic</span>
+                        <span class="tag">AES-256</span>
+                        <span class="tag">Deduplication</span>
+                        <span class="tag">linux-backup-automation</span>
                     </div>
                 </div>
 
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">🛡️ CIS Benchmark Compliance Scanner</h3>
+                            <h3 class="card-title">🧪 Automated Restore Verification Pipeline</h3>
                             <span class="badge badge-amber">In Progress</span>
                         </div>
-                        <p>Automated auditing role validating host OS configurations against CIS (Center for Internet Security) benchmarks for Debian and RHEL node targets.</p>
+                        <p>Scheduled cold-boot dry-run restore testing inside isolated Podman ephemeral environments with automated checksum verification and alert hooks.</p>
                     </div>
                     <div class="tag-container">
-                        <span class="tag">CIS</span>
-                        <span class="tag">Compliance</span>
-                        <span class="tag">Hardening</span>
-                        <span class="tag">Ansible</span>
+                        <span class="tag">DR Testing</span>
+                        <span class="tag">Podman</span>
+                        <span class="tag">Healthchecks</span>
+                        <span class="tag">linux-backup-automation</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">☁️ Immutable 3-2-1 Offsite Cloud Replication</h3>
+                            <span class="badge badge-amber">In Progress</span>
+                        </div>
+                        <p>Automated offsite S3 Object Lock immutable sync using <code>rclone</code> with scheduled bandwidth throttling and failure notification Webhooks.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">rclone</span>
+                        <span class="tag">S3 Object Lock</span>
+                        <span class="tag">Immutable</span>
+                        <span class="tag">linux-backup-automation</span>
                     </div>
                 </div>
             </div>
