@@ -5,6 +5,18 @@ All notable changes to the `sudoshea.github.io` portfolio site will be documente
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+---
+
+## [1.7.0] - 2026-07-30
+
+### Changed
+* **Repository Version Alignments:** Updated version badges across production project cards to reflect `homelab-infrastructure` v1.8.5 and `linux-backup-automation` v1.1.0 releases.
+* **Milestone Progress Updates:** Moved the **Automated Restore Verification Pipeline** card from "In Progress" to "Completed Smaller Projects" following its deployment in `linux-backup-automation` v1.1.0 and `homelab-infrastructure` v1.8.5.
+* **Roadmap Realignment:** Updated the "In Progress" pipeline to focus on the **Headscale Mesh VPN Control Plane** and **Prometheus & cAdvisor Telemetry** integrations.
+* **Bio & Mission Refinement:** Refined the profile summary to highlight automated weekly disaster recovery verification and zero-trust private mesh networking.
+
+---
+
 ## [1.6.1] - 2026-07-27
 
 ### Fixed

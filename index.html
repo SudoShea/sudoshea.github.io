@@ -3,8 +3,8 @@
 File        : index.html
 Description : SudoShea Security & Infrastructure Portfolio Site
 Author      : SudoShea
-Version     : 1.6.1
-License     : MIT
+Version     : 1.7.0
+Licence     : MIT
 ==============================================================================
 -->
 <!DOCTYPE html>
@@ -215,7 +215,7 @@ License     : MIT
         <!-- ABOUT / MISSION STATEMENT BLURB -->
         <section class="bio-card">
             <p><strong>About Me:</strong> Systems &amp; Security Automation Engineer focused on building resilient, reproducible, and production-grade Linux infrastructure. I specialise in zero-trust rootless containerisation, automated OS hardening, client-side encryption pipelines, and Infrastructure-as-Code (IaC) workflows.</p>
-            <p><strong>Current &amp; Planned Focus:</strong> My ongoing work centres on eliminating single points of failure across multi-node homelab architectures — engineering automated multi-OS maintenance (Debian &amp; RHEL), high-availability DNS synchronisation, native TLS certificate lifecycle management, and strict 3-2-1 disaster recovery pipelines.</p>
+            <p><strong>Current &amp; Planned Focus:</strong> My ongoing work centres on eliminating single points of failure across multi-node homelab architectures — engineering automated multi-OS maintenance (Debian &amp; RHEL), high-availability DNS synchronisation, automated weekly disaster recovery verification pipelines, and secure private mesh networking.</p>
         </section>
 
         <main>
@@ -226,9 +226,9 @@ License     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title"><a href="https://github.com/SudoShea/homelab-infrastructure">🏠 homelab-infrastructure</a></h3>
-                            <span class="badge badge-green">v1.7.1</span>
+                            <span class="badge badge-green">v1.8.5</span>
                         </div>
-                        <p>Ansible-driven IaC stack deploying systemd-native Podman Quadlets (Pi-hole v6 native HTTPS, Unbound recursive DNS, Vector, Loki, Grafana) with multi-OS support (Debian/RHEL), automated backups, and host security patching.</p>
+                        <p>Ansible-driven IaC stack deploying systemd-native Podman Quadlets (Pi-hole v6 native HTTPS, Unbound recursive DNS, Vector, Loki, Grafana) with multi-OS support (Debian/RHEL), automated backup verification, and host security patching.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Ansible</span>
@@ -281,16 +281,17 @@ License     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title"><a href="https://github.com/SudoShea/linux-backup-automation">💾 linux-backup-automation</a></h3>
-                            <span class="badge badge-amber">v0.1.0</span>
+                            <span class="badge badge-green">v1.1.0</span>
                         </div>
-                        <p>Automated backup, encryption, retention prune, and restore testing framework for zero-trust disaster recovery pipelines across Linux hosts.</p>
+                        <p>Automated Ansible role deploying Restic AES-256 client-side encrypted backups, retention pruning, offsite Rclone cloud sync, and automated weekly sandbox restore verification timers.</p>
                     </div>
                     <div class="tag-container">
-                        <span class="tag">Python</span>
-                        <span class="tag">Bash</span>
-                        <span class="tag">AES-256</span>
+                        <span class="tag">Ansible</span>
                         <span class="tag">Restic</span>
+                        <span class="tag">AES-256</span>
+                        <span class="tag">Restore Verification</span>
                         <span class="tag">3-2-1 Backup</span>
+                        <span class="tag">Rclone</span>
                     </div>
                 </div>
             </div>
@@ -298,6 +299,26 @@ License     : MIT
             <!-- 2. COMPLETED SMALLER PROJECTS -->
             <h2 class="section-title">✅ Completed Smaller Projects</h2>
             <div class="grid-row">
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🧪 Automated Restore Verification Pipeline</h3>
+                            <span class="badge badge-blue">Completed</span>
+                        </div>
+                        <p>Scheduled weekly systemd timer running automated Restic 10% data subset integrity checks and sandboxed restores into isolated <code>/tmp</code> environments with automated cleanup.</p>
+                        <ul>
+                            <li><strong>Timer:</strong> <code>restic-verify.timer</code> (Weekly)</li>
+                            <li><strong>Script:</strong> <code>/usr/local/bin/test-restore.sh</code></li>
+                        </ul>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Restic</span>
+                        <span class="tag">systemd</span>
+                        <span class="tag">DR Testing</span>
+                        <span class="tag">Sandbox</span>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div>
                         <div class="card-header">
@@ -364,7 +385,7 @@ License     : MIT
                             <h3 class="card-title">📊 Centralised Syslog &amp; Log Pipeline</h3>
                             <span class="badge badge-blue">Completed</span>
                         </div>
-                        <p>Deployment of a lightweight Vector log collector, Loki indexing engine, and Grafana UI container stack over HTTPS to visualize systemd and container logs.</p>
+                        <p>Deployment of a lightweight Vector log collector, Loki indexing engine, and Grafana UI container stack over HTTPS to visualise systemd and container logs.</p>
                         <ul>
                             <li><strong>Pipeline:</strong> Vector &rarr; Loki &rarr; Grafana HTTPS</li>
                             <li><strong>Scope:</strong> Real-time journald &amp; container log aggregation</li>
@@ -420,26 +441,6 @@ License     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">🔐 Encrypted Backup Policy</h3>
-                            <span class="badge badge-blue">Completed</span>
-                        </div>
-                        <p>Client-side AES-256 GPG snapshot automation, automated weekly dry-run restore tests, and 3-2-1 offsite cloud replication runbook.</p>
-                        <ul>
-                            <li><strong>Schedule:</strong> Daily 02:00 AM (7-day rolling)</li>
-                            <li><strong>Integrity:</strong> Weekly automated restore test</li>
-                        </ul>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">Backup</span>
-                        <span class="tag">AES-256</span>
-                        <span class="tag">GnuPG</span>
-                        <span class="tag">rclone</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-header">
                             <h3 class="card-title">🤖 CI/CD Quality Gates</h3>
                             <span class="badge badge-blue">Completed</span>
                         </div>
@@ -458,48 +459,32 @@ License     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">🔐 Automated AES-256 Snapshot Engine</h3>
+                            <h3 class="card-title">🌐 Headscale Mesh VPN Control Plane</h3>
                             <span class="badge badge-amber">In Progress</span>
                         </div>
-                        <p>Restic/Borg-based incremental backup automation featuring client-side encryption, chunk-level deduplication, and automated snapshot retention pruning.</p>
+                        <p>Self-hosted Headscale control plane integration to orchestrate a private, zero-trust WireGuard mesh network connecting remote hosts and homelab nodes.</p>
                     </div>
                     <div class="tag-container">
-                        <span class="tag">Restic</span>
-                        <span class="tag">AES-256</span>
-                        <span class="tag">Deduplication</span>
-                        <span class="tag">linux-backup-automation</span>
+                        <span class="tag">Headscale</span>
+                        <span class="tag">WireGuard</span>
+                        <span class="tag">Mesh VPN</span>
+                        <span class="tag">homelab-infrastructure</span>
                     </div>
                 </div>
 
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">🧪 Automated Restore Verification Pipeline</h3>
+                            <h3 class="card-title">📊 Prometheus &amp; cAdvisor Telemetry</h3>
                             <span class="badge badge-amber">In Progress</span>
                         </div>
-                        <p>Scheduled cold-boot dry-run restore testing inside isolated Podman ephemeral environments with automated checksum verification and alert hooks.</p>
+                        <p>Expanding centralised observability stack with Node Exporter and cAdvisor metric collectors piped into Prometheus for system performance and resource tracking.</p>
                     </div>
                     <div class="tag-container">
-                        <span class="tag">DR Testing</span>
-                        <span class="tag">Podman</span>
-                        <span class="tag">Healthchecks</span>
-                        <span class="tag">linux-backup-automation</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <h3 class="card-title">☁️ Immutable 3-2-1 Offsite Cloud Replication</h3>
-                            <span class="badge badge-amber">In Progress</span>
-                        </div>
-                        <p>Automated offsite S3 Object Lock immutable sync using <code>rclone</code> with scheduled bandwidth throttling and failure notification Webhooks.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">rclone</span>
-                        <span class="tag">S3 Object Lock</span>
-                        <span class="tag">Immutable</span>
-                        <span class="tag">linux-backup-automation</span>
+                        <span class="tag">Prometheus</span>
+                        <span class="tag">Grafana</span>
+                        <span class="tag">Metrics</span>
+                        <span class="tag">cAdvisor</span>
                     </div>
                 </div>
             </div>
@@ -507,36 +492,6 @@ License     : MIT
             <!-- 4. BACKLOG -->
             <h2 class="section-title">📌 Backlog</h2>
             <div class="grid-row">
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <h3 class="card-title">🌐 Headscale Mesh VPN</h3>
-                            <span class="badge badge-purple">homelab-infrastructure</span>
-                        </div>
-                        <p>Self-hosted Headscale control plane to orchestrate a private, secure WireGuard mesh network connecting remote devices and homelab nodes.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">Headscale</span>
-                        <span class="tag">WireGuard</span>
-                        <span class="tag">VPN</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <h3 class="card-title">📈 Prometheus &amp; Grafana Telemetry</h3>
-                            <span class="badge badge-purple">homelab-infrastructure</span>
-                        </div>
-                        <p>Telemetry stack deploying Node Exporter and cAdvisor metrics collectors piped into Prometheus and visualised via custom Grafana dashboards.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">Prometheus</span>
-                        <span class="tag">Grafana</span>
-                        <span class="tag">Metrics</span>
-                    </div>
-                </div>
-
                 <div class="card">
                     <div>
                         <div class="card-header">
