@@ -1,9 +1,19 @@
+# ==============================================================================
+# Workflow    : .github/workflows/deploy.yml
+# Description : GitHub Actions CI/CD workflow for HTMLHint linting and Pages deploy
+# Author      : SudoShea
+# Version     : 1.7.1
+# Licence     : MIT
+# ==============================================================================
 name: HTML Lint and Deploy Website
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 permissions:
   contents: read
@@ -25,7 +35,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
 
       - name: Run HTMLHint
         run: npx htmlhint index.html

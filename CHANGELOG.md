@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.7.1] - 2026-07-30
+
+### Added
+* **Metadata & Favicon Enhancements:** Embedded Open Graph social media tags (`og:title`, `og:description`, `og:url`, `og:image`) and an inline SVG lightning favicon in `index.html`.
+* **Static Analysis Configuration:** Added `.htmlhintrc` configuration file to enforce uniform HTML syntax rules locally and across CI.
+* **Local Test Automation:** Added `scripts/test.sh` bash execution wrapper to validate `index.html` against `.htmlhintrc` rules locally before committing.
+
+### Fixed
+* **CI Workflow Alignment:** Standardised `.github/workflows/deploy.yml` to specify Node.js 24 LTS (`node-version: '24'`) and introduced the `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24` environment variable to align runtime standards across all core repositories.
+
+### Documentation
+* **Project Documentation Overhaul:** Refreshed `README.md` with active workflow status badges, repository layout tree, local preview and test script execution instructions, and Australian English spelling standards.
+
+---
+
 ## [1.7.0] - 2026-07-30
 
 ### Changed
