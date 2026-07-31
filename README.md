@@ -1,6 +1,6 @@
 # SudoShea Portfolio & Project Hub ⚡
 
-[![HTML Lint and Deploy Website](https://github.com/SudoShea/sudoshea.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/SudoShea/sudoshea.github.io/actions/workflows/deploy.yml)
+[![HTML Lint and Deploy Website](https://github.com/SudoShea/sudoshea.github.io/actions/workflows/lint.yml/badge.svg)](https://github.com/SudoShea/sudoshea.github.io/actions/workflows/lint.yml)
 [![Live Site](https://img.shields.io/badge/site-sudoshea.github.io-38bdf8?logo=githubpages&logoColor=white)](https://sudoshea.github.io)
 [![Version](https://img.shields.io/github/v/tag/SudoShea/sudoshea.github.io?label=release&color=blue)](https://github.com/SudoShea/sudoshea.github.io/tags)
 [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
