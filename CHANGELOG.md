@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.8.0] - 2026-08-02
+
+### Added
+* **Completed Maintenance Project Card:** Added "Automated Host & Container Maintenance" card under *Completed Smaller Projects*, detailing `homelab-maintenance.timer`, `podman unshare` SQLite vacuuming, cross-distro package cleanups, and reboot auditing.
+* **Alerting Pipeline (In Progress):** Added "Automated Incident Alerting Pipeline" card tracking real-time Grafana Alerting and Vector push notifications for DNS outages and backup verification failures.
+* **Headless GNS3 Lab Server (Backlog):** Introduced "Headless GNS3 & KVM Lab Server" card under *Backlog* supporting RHCSA and JNCIA-Junos certification hands-on labbing on RHEL with native KVM acceleration and SELinux policies.
+
+### Changed
+* **Homelab Stack Version Bump:** Updated `homelab-infrastructure` production repository status badge and description to **v1.9.0** to reflect the new system maintenance role.
+* **Bio & Strategic Focus:** Updated the header mission statement to highlight automated multi-OS maintenance, high-availability DNS synchronisation, and disaster recovery pipelines.
+
+### Removed
+* **Obsolete Project Cards:** Pruned legacy items including *Headscale Mesh VPN*, *Automated Secrets Management*, *Molecule CI Integration Testing*, and *Rootless Caddy Ingress Proxy* to keep the portfolio accurately focused on active infrastructure.
+
+---
+
 ## [1.7.1] - 2026-07-30
 
 ### Added

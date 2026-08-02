@@ -3,7 +3,7 @@
 File        : index.html
 Description : SudoShea Security & Infrastructure Portfolio Site
 Author      : SudoShea
-Version     : 1.7.1
+Version     : 1.8.0
 Licence     : MIT
 ==============================================================================
 -->
@@ -226,7 +226,7 @@ Licence     : MIT
         <!-- ABOUT / MISSION STATEMENT BLURB -->
         <section class="bio-card">
             <p><strong>About Me:</strong> Systems &amp; Security Automation Engineer focused on building resilient, reproducible, and production-grade Linux infrastructure. I specialise in zero-trust rootless containerisation, automated OS hardening, client-side encryption pipelines, and Infrastructure-as-Code (IaC) workflows.</p>
-            <p><strong>Current &amp; Planned Focus:</strong> My ongoing work centres on eliminating single points of failure across multi-node homelab architectures — engineering automated multi-OS maintenance (Debian &amp; RHEL), high-availability DNS synchronisation, automated weekly disaster recovery verification pipelines, and secure private mesh networking.</p>
+            <p><strong>Current &amp; Planned Focus:</strong> My ongoing work centres on eliminating single points of failure across multi-node homelab architectures — engineering automated multi-OS maintenance (Debian &amp; RHEL), high-availability DNS synchronisation, automated weekly disaster recovery verification pipelines, and centralised observability.</p>
         </section>
 
         <main>
@@ -237,9 +237,9 @@ Licence     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title"><a href="https://github.com/SudoShea/homelab-infrastructure">🏠 homelab-infrastructure</a></h3>
-                            <span class="badge badge-green">v1.8.5</span>
+                            <span class="badge badge-green">v1.9.0</span>
                         </div>
-                        <p>Ansible-driven IaC stack deploying systemd-native Podman Quadlets (Pi-hole v6 native HTTPS, Unbound recursive DNS, Vector, Loki, Grafana) with multi-OS support (Debian/RHEL), automated backup verification, and host security patching.</p>
+                        <p>Ansible-driven IaC stack deploying systemd-native Podman Quadlets (Pi-hole v6 native HTTPS, Unbound recursive DNS, Vector, Loki, Grafana) with multi-OS support (Debian/RHEL), automated backup verification, and automated weekly systemd host/container maintenance.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Ansible</span>
@@ -249,7 +249,7 @@ Licence     : MIT
                         <span class="tag">Loki</span>
                         <span class="tag">Grafana</span>
                         <span class="tag">Vector</span>
-                        <span class="tag">AES-256</span>
+                        <span class="tag">Maintenance</span>
                     </div>
                 </div>
 
@@ -310,6 +310,27 @@ Licence     : MIT
             <!-- 2. COMPLETED SMALLER PROJECTS -->
             <h2 class="section-title">✅ Completed Smaller Projects</h2>
             <div class="grid-row">
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🧹 Automated Host &amp; Container Maintenance</h3>
+                            <span class="badge badge-blue">Completed</span>
+                        </div>
+                        <p>Standalone Ansible maintenance role deploying automated weekly user-scoped systemd timers for Podman image pruning, journal log vacuuming, cross-distro package cleanup, Pi-hole FTL SQLite vacuuming via <code>podman unshare</code>, and reboot auditing.</p>
+                        <ul>
+                            <li><strong>Timer:</strong> <code>homelab-maintenance.timer</code> (Weekly Sun 04:00 AM)</li>
+                            <li><strong>Execution:</strong> Rolling <code>serial: 1</code> zero-downtime execution</li>
+                        </ul>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">systemd</span>
+                        <span class="tag">Podman</span>
+                        <span class="tag">Ansible</span>
+                        <span class="tag">Housekeeping</span>
+                        <span class="tag">Debian/RHEL</span>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div>
                         <div class="card-header">
@@ -470,32 +491,32 @@ Licence     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">🌐 Headscale Mesh VPN Control Plane</h3>
-                            <span class="badge badge-amber">In Progress</span>
-                        </div>
-                        <p>Self-hosted Headscale control plane integration to orchestrate a private, zero-trust WireGuard mesh network connecting remote hosts and homelab nodes.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">Headscale</span>
-                        <span class="tag">WireGuard</span>
-                        <span class="tag">Mesh VPN</span>
-                        <span class="tag">homelab-infrastructure</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-header">
                             <h3 class="card-title">📊 Prometheus &amp; cAdvisor Telemetry</h3>
                             <span class="badge badge-amber">In Progress</span>
                         </div>
-                        <p>Expanding centralised observability stack with Node Exporter and cAdvisor metric collectors piped into Prometheus for system performance and resource tracking.</p>
+                        <p>Expanding centralised observability stack with Node Exporter and cAdvisor metric collectors piped into Prometheus for system performance and container resource tracking.</p>
                     </div>
                     <div class="tag-container">
                         <span class="tag">Prometheus</span>
                         <span class="tag">Grafana</span>
                         <span class="tag">Metrics</span>
                         <span class="tag">cAdvisor</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🔔 Automated Incident Alerting Pipeline</h3>
+                            <span class="badge badge-amber">In Progress</span>
+                        </div>
+                        <p>Engineering real-time notification rules in Grafana and Vector to trigger instant push alerts (via Webhooks/Telegram) if primary DNS drops offline or backup verification fails.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Grafana Alerting</span>
+                        <span class="tag">Vector</span>
+                        <span class="tag">Alerting</span>
+                        <span class="tag">Monitoring</span>
                     </div>
                 </div>
             </div>
@@ -506,32 +527,33 @@ Licence     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">🔐 Automated Secrets Management</h3>
-                            <span class="badge badge-purple">ansible-system-hardening</span>
+                            <h3 class="card-title">🔄 Rolling Host Reboot Orchestrator</h3>
+                            <span class="badge badge-purple">homelab-infrastructure</span>
                         </div>
-                        <p>Integrating Mozilla SOPS and HashiCorp Vault workflows into Ansible automation for secure, age-encrypted credential handling in public repositories.</p>
+                        <p>Designing an Ansible orchestration playbook to execute zero-downtime rolling reboots of dual DNS nodes (`pihole-primary` &amp; `pihole-secondary`) when host reboot flags are triggered by kernel updates.</p>
                     </div>
                     <div class="tag-container">
-                        <span class="tag">SOPS</span>
-                        <span class="tag">Vault</span>
-                        <span class="tag">Encryption</span>
                         <span class="tag">Ansible</span>
+                        <span class="tag">High Availability</span>
+                        <span class="tag">Orchestration</span>
+                        <span class="tag">Linux</span>
                     </div>
                 </div>
 
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">🧪 Molecule CI Integration Testing</h3>
-                            <span class="badge badge-purple">ansible-system-hardening</span>
+                            <h3 class="card-title">🌐 Headless GNS3 &amp; KVM Lab Server</h3>
+                            <span class="badge badge-purple">RHCSA / JNCIA Track</span>
                         </div>
-                        <p>Implementing automated Ansible Molecule testing pipelines utilising Podman drivers to validate role idempotency and task execution in CI.</p>
+                        <p>Architecting a headless GNS3 server on RHEL utilising native KVM/libvirt acceleration, SELinux capability policies (<code>ubridge</code>), and systemd user units to virtualise Junos (vSRX/vMX) and RHEL enterprise nodes.</p>
                     </div>
                     <div class="tag-container">
-                        <span class="tag">Molecule</span>
-                        <span class="tag">CI/CD</span>
-                        <span class="tag">Podman</span>
-                        <span class="tag">Testing</span>
+                        <span class="tag">GNS3</span>
+                        <span class="tag">RHEL</span>
+                        <span class="tag">KVM / QEMU</span>
+                        <span class="tag">Junos</span>
+                        <span class="tag">SELinux</span>
                     </div>
                 </div>
             </div>

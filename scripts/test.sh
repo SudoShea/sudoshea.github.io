@@ -3,7 +3,7 @@
 # Script      : scripts/test.sh
 # Description : Local HTMLHint static analysis execution script for portfolio
 # Author      : SudoShea
-# Version     : 1.7.1
+# Version     : 1.8.0
 # Licence     : MIT
 # ==============================================================================
 set -euo pipefail
