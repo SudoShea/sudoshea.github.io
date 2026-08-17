@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.9.0] - 2026-08-17
+
+### Added
+* **`rhcsa-jncia-labs` Production Card:** Added production repository card (v1.0.0) covering RHCSA (RHEL 10) and JNCIA-Junos (JN0-106) engineering labs, Ansible playbooks, and topology definitions.
+* **Completed Project Cards:** Promoted "Rolling Host Reboot Orchestrator" and "Headless GNS3 & KVM Lab Server" cards to *Completed Projects*.
+* **In Progress Track Cards:** Introduced "HashiCorp Vault Integration" and "Automated KVM Node Provisioning" cards under *In Progress*.
+
+### Changed
+* **Section Header:** Renamed *Completed Smaller Projects* to *Completed Projects*.
+* **Backlog Reorganisation:** Moved "Prometheus & cAdvisor Telemetry" and "Automated Incident Alerting Pipeline" cards to *Backlog*.
+* **Homelab Stack Version Bump:** Updated `homelab-infrastructure` production repository status badge and description to **v1.10.0**.
+* **Bio & Strategic Focus:** Updated mission statement to incorporate enterprise certification lab environments (RHCSA & JNCIA).
+
+---
+
 ## [1.8.0] - 2026-08-02
 
 ### Added

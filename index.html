@@ -3,7 +3,7 @@
 File        : index.html
 Description : SudoShea Security & Infrastructure Portfolio Site
 Author      : SudoShea
-Version     : 1.8.0
+Version     : 1.9.0
 Licence     : MIT
 ==============================================================================
 -->
@@ -226,7 +226,7 @@ Licence     : MIT
         <!-- ABOUT / MISSION STATEMENT BLURB -->
         <section class="bio-card">
             <p><strong>About Me:</strong> Systems &amp; Security Automation Engineer focused on building resilient, reproducible, and production-grade Linux infrastructure. I specialise in zero-trust rootless containerisation, automated OS hardening, client-side encryption pipelines, and Infrastructure-as-Code (IaC) workflows.</p>
-            <p><strong>Current &amp; Planned Focus:</strong> My ongoing work centres on eliminating single points of failure across multi-node homelab architectures — engineering automated multi-OS maintenance (Debian &amp; RHEL), high-availability DNS synchronisation, automated weekly disaster recovery verification pipelines, and centralised observability.</p>
+            <p><strong>Current &amp; Planned Focus:</strong> My ongoing work centres on eliminating single points of failure across multi-node homelab architectures — engineering automated multi-OS maintenance (Debian &amp; RHEL), high-availability DNS synchronisation, automated weekly disaster recovery verification pipelines, and enterprise certification lab environments (RHCSA &amp; JNCIA).</p>
         </section>
 
         <main>
@@ -236,8 +236,27 @@ Licence     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
+                            <h3 class="card-title"><a href="https://github.com/SudoShea/rhcsa-jncia-labs">🎓 rhcsa-jncia-labs</a></h3>
+                            <span class="badge badge-green">v1.0.0</span>
+                        </div>
+                        <p>Hands-on engineering lab repository, Ansible automation playbooks, and topology definitions for mastering Red Hat Certified System Administrator (EX200 on RHEL 10) and Juniper Networks Certified Associate Junos (JN0-106) tracks.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">RHEL 10</span>
+                        <span class="tag">Junos OS</span>
+                        <span class="tag">Ansible</span>
+                        <span class="tag">KVM/libvirt</span>
+                        <span class="tag">GNS3</span>
+                        <span class="tag">RHCSA</span>
+                        <span class="tag">JNCIA</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
                             <h3 class="card-title"><a href="https://github.com/SudoShea/homelab-infrastructure">🏠 homelab-infrastructure</a></h3>
-                            <span class="badge badge-green">v1.9.0</span>
+                            <span class="badge badge-green">v1.10.0</span>
                         </div>
                         <p>Ansible-driven IaC stack deploying systemd-native Podman Quadlets (Pi-hole v6 native HTTPS, Unbound recursive DNS, Vector, Loki, Grafana) with multi-OS support (Debian/RHEL), automated backup verification, and automated weekly systemd host/container maintenance.</p>
                     </div>
@@ -307,9 +326,52 @@ Licence     : MIT
                 </div>
             </div>
 
-            <!-- 2. COMPLETED SMALLER PROJECTS -->
-            <h2 class="section-title">✅ Completed Smaller Projects</h2>
+            <!-- 2. COMPLETED PROJECTS -->
+            <h2 class="section-title">✅ Completed Projects</h2>
             <div class="grid-row">
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🔄 Rolling Host Reboot Orchestrator</h3>
+                            <span class="badge badge-blue">Completed</span>
+                        </div>
+                        <p>Ansible orchestration playbook executing zero-downtime rolling reboots across dual DNS nodes (<code>pihole-primary</code> &amp; <code>pihole-secondary</code>) with pre-reboot peer health checks, reboot flag detection, and post-reboot container/resolution validation.</p>
+                        <ul>
+                            <li><strong>Strategy:</strong> <code>serial: 1</code> rolling execution with peer <code>dig</code> validation</li>
+                            <li><strong>Validation:</strong> Automated Podman container readiness &amp; local 127.0.0.1 DNS checks</li>
+                        </ul>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Ansible</span>
+                        <span class="tag">High Availability</span>
+                        <span class="tag">Orchestration</span>
+                        <span class="tag">Podman</span>
+                        <span class="tag">DNS</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">🌐 Headless GNS3 &amp; KVM Lab Server</h3>
+                            <span class="badge badge-blue">Completed</span>
+                        </div>
+                        <p>Headless GNS3 server environment running on RHEL via Python with native KVM/libvirt acceleration, SELinux capability policies (<code>ubridge</code>), and systemd user services for virtualising Junos (vSRX) and Linux lab nodes.</p>
+                        <ul>
+                            <li><strong>Engine:</strong> Python <code>gns3server</code> daemon + systemd user service</li>
+                            <li><strong>Acceleration:</strong> KVM/libvirt + <code>setcap</code> for non-root <code>ubridge</code></li>
+                        </ul>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">GNS3</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">RHEL 10</span>
+                        <span class="tag">KVM / QEMU</span>
+                        <span class="tag">Junos</span>
+                        <span class="tag">SELinux</span>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div>
                         <div class="card-header">
@@ -491,8 +553,45 @@ Licence     : MIT
                 <div class="card">
                     <div>
                         <div class="card-header">
-                            <h3 class="card-title">📊 Prometheus &amp; cAdvisor Telemetry</h3>
+                            <h3 class="card-title">🔐 HashiCorp Vault Integration</h3>
                             <span class="badge badge-amber">In Progress</span>
+                        </div>
+                        <p>Architecting an automated Vault instance with Podman Quadlets to centralise SSH keys, API tokens, and Ansible secrets with transit auto-unseal capabilities.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">HashiCorp Vault</span>
+                        <span class="tag">Secrets Management</span>
+                        <span class="tag">Podman</span>
+                        <span class="tag">Ansible</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">⚡ Automated KVM Node Provisioning</h3>
+                            <span class="badge badge-amber">In Progress</span>
+                        </div>
+                        <p>Developing automated libvirt/qemu provisioning playbooks and Red Hat Kickstart (<code>.ks</code>) profiles for headless deployment of RHEL 10 lab nodes.</p>
+                    </div>
+                    <div class="tag-container">
+                        <span class="tag">Kickstart</span>
+                        <span class="tag">RHEL 10</span>
+                        <span class="tag">KVM / QEMU</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. BACKLOG -->
+            <h2 class="section-title">📌 Backlog</h2>
+            <div class="grid-row">
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3 class="card-title">📊 Prometheus &amp; cAdvisor Telemetry</h3>
+                            <span class="badge badge-purple">homelab-infrastructure</span>
                         </div>
                         <p>Expanding centralised observability stack with Node Exporter and cAdvisor metric collectors piped into Prometheus for system performance and container resource tracking.</p>
                     </div>
@@ -508,7 +607,7 @@ Licence     : MIT
                     <div>
                         <div class="card-header">
                             <h3 class="card-title">🔔 Automated Incident Alerting Pipeline</h3>
-                            <span class="badge badge-amber">In Progress</span>
+                            <span class="badge badge-purple">homelab-infrastructure</span>
                         </div>
                         <p>Engineering real-time notification rules in Grafana and Vector to trigger instant push alerts (via Webhooks/Telegram) if primary DNS drops offline or backup verification fails.</p>
                     </div>
@@ -517,43 +616,6 @@ Licence     : MIT
                         <span class="tag">Vector</span>
                         <span class="tag">Alerting</span>
                         <span class="tag">Monitoring</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. BACKLOG -->
-            <h2 class="section-title">📌 Backlog</h2>
-            <div class="grid-row">
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <h3 class="card-title">🔄 Rolling Host Reboot Orchestrator</h3>
-                            <span class="badge badge-purple">homelab-infrastructure</span>
-                        </div>
-                        <p>Designing an Ansible orchestration playbook to execute zero-downtime rolling reboots of dual DNS nodes (`pihole-primary` &amp; `pihole-secondary`) when host reboot flags are triggered by kernel updates.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">Ansible</span>
-                        <span class="tag">High Availability</span>
-                        <span class="tag">Orchestration</span>
-                        <span class="tag">Linux</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <h3 class="card-title">🌐 Headless GNS3 &amp; KVM Lab Server</h3>
-                            <span class="badge badge-purple">RHCSA / JNCIA Track</span>
-                        </div>
-                        <p>Architecting a headless GNS3 server on RHEL utilising native KVM/libvirt acceleration, SELinux capability policies (<code>ubridge</code>), and systemd user units to virtualise Junos (vSRX/vMX) and RHEL enterprise nodes.</p>
-                    </div>
-                    <div class="tag-container">
-                        <span class="tag">GNS3</span>
-                        <span class="tag">RHEL</span>
-                        <span class="tag">KVM / QEMU</span>
-                        <span class="tag">Junos</span>
-                        <span class="tag">SELinux</span>
                     </div>
                 </div>
             </div>
